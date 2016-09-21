@@ -1,0 +1,22 @@
+{
+  "name": "mmm-stt",
+  "version": "1.0.0",
+  "description": "Speech to Text Module for MagicMirror2",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prasanthsasikumar/MMM-STT.git"
+  },
+  "keywords": [
+    "MagicMirror",
+    "speech-to-text"
+  ],
+  "author": "PSK",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prasanthsasikumar/MMM-STT/issues"
+  },
+  "homepage": "https://github.com/prasanthsasikumar/MMM-STT#readme",
+  "dependencies": {
+    "say": "^0.9.0"
+  }
+}
