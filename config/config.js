@@ -83,13 +83,13 @@ var config = {
 					 // See 'Configuration options' for more information.
 		    }
 		  },
-			{
+			/*{
 	        module: 'MMM-PIR-Sensor',
 	        config: {
 	            // See 'Configuration options' for more information.
 	        }
 	    },/*
-			{
+			/*{
 		     module: 'MMM-voice',
 		     position: 'bottom_bar',
 		     config: {
@@ -97,6 +97,7 @@ var config = {
 		         keyword:'mirror',
 		     }
 		 },*/
+
 			/*{
 	          module: 'MMM-GameServers',
 	          position: 'top_left',  // This can be any of the regions. Best results in left or right regions.
