@@ -12,7 +12,7 @@ var vcapServices = require('vcap_services'),
     watson = require('watson-developer-cloud'),
     Socket = require("./socket.js");;
 
-var token = 'Nothing';
+var transcripts = [];
 module.exports = NodeHelper.create({
 
 	start: function() {
@@ -48,7 +48,6 @@ module.exports = NodeHelper.create({
       //this.formatMessage(payload,baseString);
       if (payload.results && payload.results.length > 0) {
         var alternatives = payload.results[0].alternatives;
-        console.log('Got '+alternatives.length+' Alternative sets.');
         for (var i in alternatives ){
           console.log(JSON.stringify(alternatives[i].transcript));
         }

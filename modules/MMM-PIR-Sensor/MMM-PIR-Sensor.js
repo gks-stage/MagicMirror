@@ -8,21 +8,21 @@
  */
 
 Module.register('MMM-PIR-Sensor',{
-	
+
 	defaults: {
 		sensorPIN: 22,
 		relayPIN: false,
 		powerSaving: true,
 		relayOnState: 1,
 	},
-	
+
 	// Override socket notification handler.
 	socketNotificationReceived: function(notification, payload) {
 		if (notification === "USER_PRESENCE"){
 			this.sendNotification(notification, payload)
 		}
 	},
-	
+
 	start: function() {
 		if (this.config.relayOnState == 1){
 			this.config.relayOffState = 0

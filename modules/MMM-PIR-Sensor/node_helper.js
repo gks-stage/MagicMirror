@@ -35,10 +35,10 @@ module.exports = NodeHelper.create({
   socketNotificationReceived: function(notification, payload) {
     const self = this;
     if (notification === 'CONFIG' && this.started == false) {
-      
+
       const self = this
       this.config = payload
-      
+
       //Setup pins
       this.pir = new Gpio(this.config.sensorPIN, 'in', 'both');
       // exec("echo '" + this.config.sensorPIN.toString() + "' > /sys/class/gpio/export", null);
@@ -49,7 +49,7 @@ module.exports = NodeHelper.create({
         this.relay.writeSync(this.config.relayOnState);
         exec("/opt/vc/bin/tvservice --preferred && sudo chvt 6 && sudo chvt 7", null);
       }
-      
+
       //Detected movement
       this.pir.watch(function(err, value) {
         if (value == 1) {
@@ -65,9 +65,9 @@ module.exports = NodeHelper.create({
           }
         }
       });
-     
+
     this.started = true
     };
   }
-  
+
 });
