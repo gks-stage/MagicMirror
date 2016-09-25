@@ -1,0 +1,29 @@
+{
+  "name": "mmm-temperature",
+  "version": "0.1.0",
+  "description": "Show temperature from a sensor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CatoAntonsen/MMM-Temperature.git"
+  },
+  "keywords": [
+    "Magic",
+    "Mirror",
+    "Module",
+    "Temperature",
+    "Sensor"
+  ],
+  "author": "Cato Antonsen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CatoAntonsen/MMM-Temperature/issues"
+  },
+  "homepage": "https://github.com/CatoAntonsen/MMM-Temperature#readme",
+  "devDependencies": {
+    "ds18b20": "^0.1.0"
+  }
+}

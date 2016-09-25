@@ -20,15 +20,52 @@ var config = {
 			module: 'clock',
 			position: 'top_left'
 		},
+		/*{
+        module: 'MMM-ModuleScheduler'
+    },
+		{
+        module: 'email',
+        position: 'bottom_left',
+        header: 'Email',
+        config:{
+            user: '143prasanths@gmail.com',
+            password: 'praveen4',
+            host: 'imap.gmail.com',
+            port: 993,
+            tls: true,
+            authTimeout: 10000,
+            numberOfEmails: 5,
+            fade: true
+        },
+    },*/
+		{
+					 module: 'phone_notification',
+					 position: 'bottom_right',
+					 header: 'Phone Notifications',
+					 config:{
+							 accessToken: 'o.85OuVS4o2mlOZ21hymEhjiSJmkLK8ttA',
+							 numberOfNotifications: 5,
+							 displayNotificationIcon: true,
+							 displayMessage: true,
+							 displayCount: false,
+							 alert: false,
+							 fade: true,
+							 maxCharacters: 50
+					 },
+	 },
 		{
 			module: 'calendar',
-			header: 'India Holidays',
+			header: 'Calendar',
 			position: 'top_left',
 			config: {
 				calendars: [
 					{
 						symbol: 'calendar-check-o ',
 						url: 'webcal://www.calendarlabs.com/templates/ical/India-Holidays.ics'
+					},
+					{
+						symbol: 'calendar-check-o ',
+						url: 'webcal://www.calendar.prasanthsasikumar.com/birthdays.ics'
 					}
 				]
 			}
