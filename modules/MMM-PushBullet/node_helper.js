@@ -145,11 +145,11 @@ var youtube = {
 module.exports = NodeHelper.create({
   start: function() {
     console.log(this.name + ' helper started ...');
-    this.dummy();
-    //this.call();
+    //this.testCall();
+    //this.testApp();
   },
 
-  call: function() {
+  testCall: function() {
     var self = this;
     setTimeout(function() {
       console.log("Calling");
@@ -157,10 +157,10 @@ module.exports = NodeHelper.create({
     }, 5000)
   },
 
-  dummy: function() {
+  testApp: function() {
     var self = this;
     msg.push.notifications[0].body++;
-    //self.sendSocketNotification('DATA_RECEIVED', msg);
+    self.sendSocketNotification('DATA_RECEIVED', msg);
     self.sendSocketNotification('DATA_RECEIVED', another);
     setTimeout(function() {
       self.dummy();
