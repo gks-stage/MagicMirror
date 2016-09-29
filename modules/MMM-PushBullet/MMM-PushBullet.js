@@ -10,34 +10,24 @@ Approach:  There are two queues : One for messages and one for the rest of the n
 Module.register("MMM-PushBullet", {
   defaults: {
     accessToken: '',
-    numberOfNotifications: 5,
     displayNotificationIcon: true,
-    displayMessage: true,
-    displayCount: false,
     alertOnNotification: true,
     fade: true,
     maxCharacters: 50,
-    msgType: 'sms_changed',
-    mirrorType: 'mirror',
     filterJunkMsg: true,
     msgLimit: 4,
     genLimit: 4,
-    hideIfNoNotification: false
+    hideIfNoNotification: false,
+    msgType: 'sms_changed',
+    mirrorType: 'mirror'
   },
 
   payload: [],
 
   start: function() {
     Log.info('Starting module: ' + this.name);
-    this.msgQueue = [];
-    this.genQueue = [];
-    this.lastNotificationTimeStamp = null;
-    this.lastNotificationBody = null;
-    this.busy = false;
-    this.busyStart = 0;
-    this.count = 0;
+    this.initialize();
     this.sendSocketNotification('CONFIG', this.config);
-    this.autoClearAlert();
   },
 
   socketNotificationReceived: function(notification, payload) {
@@ -124,7 +114,8 @@ Module.register("MMM-PushBullet", {
       if (queue[i].type === this.config.msgType) {
         var notifications = queue[i].notifications[0];
         content = notifications.title + ": " + notifications.body;
-        textnode = document.createTextNode(content);
+        textnode = document.createTextNode(content.substring(0,
+          this.config.maxCharacters));
         data.appendChild(textnode);
       }
       if (queue[i].type === this.config.mirrorType) {
@@ -214,7 +205,7 @@ Module.register("MMM-PushBullet", {
 
   //Extracts the portion of the data that needs to be displayed to the screen
   extractBody(body) {
-    return body.substring(body.indexOf('\n'), 50);
+    return body.substring(body.indexOf('\n'), this.config.maxCharacters);
   },
 
   // Create fade effect if configured so
@@ -247,5 +238,17 @@ Module.register("MMM-PushBullet", {
       self.autoClearAlert();
     }, 1000);
   },
+
+
+  initialize: function() {
+    this.msgQueue = [];
+    this.genQueue = [];
+    this.lastNotificationTimeStamp = null;
+    this.lastNotificationBody = null;
+    this.busy = false;
+    this.busyStart = 0;
+    this.count = 0;
+    this.autoClearAlert();
+  }
 
 });
