@@ -1,14 +1,14 @@
 {
-  "name": "phone_notification",
+  "name": "MMM-PushBullet",
   "description": "Widget that notifies mirror on new incoming phone notification.",
   "keywords": [
-    "phone notification",
+    "MMM-PushBullet",
     "mirror",
     "smart mirror",
-    "notification"
+    "notification mirroring"
   ],
   "version": "0.0.1",
   "dependencies": {
-    "ws" : "latest"
+    "ws": "latest"
   }
 }

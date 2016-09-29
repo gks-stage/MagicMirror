@@ -28,6 +28,9 @@ var config = {
 				}, {
 					symbol: 'calendar-check-o ',
 					url: 'webcal://www.calendar.prasanthsasikumar.com/birthdays.ics'
+				}, {
+					symbol: 'calendar-check-o',
+					url: 'webcal://calendar.google.com/calendar/ical/143prasanths%40gmail.com/public/basic.ics'
 				}]
 			}
 		}, {
@@ -65,7 +68,8 @@ var config = {
 			config: {
 				text: 'MMM-TTS',
 			}
-		}, {
+		},
+		/*{
 			module: 'MMM-Temperature-Humidity',
 			position: 'bottom_right',
 			config: {
@@ -75,13 +79,24 @@ var config = {
 				humidityPrefix: "Humidity: ",
 				humiditySuffix: "%"
 			}
-		},
+		}, */
 		/*{
-			module: 'phone_notification',
-			position: 'bottom_right',
+			module: 'MMM-Instagram',
+			position: 'top_left',
+			config: {
+				access_token: '3260258452.1677ed0.37ad904838d94d0187a595975485bf80',
+				count: 200,
+				min_timestamp: 0,
+				animationSpeed: 2500,
+				updateInterval: 12000
+			}
+		},*/
+		{
+			module: 'MMM-PushBullet',
+			position: 'bottom_left',
 			header: 'Phone Notifications',
 			config: {
-				accessToken: 'o.85OuVS4o2mlOZ21hymEhjiSJmkLK8ttA',
+				accessToken: 'o.S9y8SnjxGNgCCgLQNT5uz9IQnfDOvvZS',
 				numberOfNotifications: 5,
 				displayNotificationIcon: true,
 				displayMessage: true,
@@ -90,7 +105,7 @@ var config = {
 				fade: true,
 				maxCharacters: 50
 			},
-		},*/
+		},
 		/*{
 			module: 'MMM-STT',
 			position: 'bottom_left',

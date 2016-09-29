@@ -1,14 +1,15 @@
-# Phone Notification - Mirror
-Displays and alerts mirror users on new phone notifications. 
+# MMM-PushBullet Configurable Notification Mirroring
+Displays and alerts mirror users on new phone notifications which are configurable.
+This module is heavily based on ![phone-notification-mirror](https://github.com/ronny3050/phone-notification-mirror) by ![ronny3050](https://github.com/ronny3050).
 
 ![Phone Visualization](https://github.com/ronny3050/phone-notification-mirror/blob/master/.github/full_preview.png)
 
 ## Getting Started
-Firstly, a [Pushbullet](https://www.pushbullet.com/) app is required on the phone. After downloading and installing the application on your phone, get a Pushbullet Access Token from your Account Settings. 
+Firstly, a [Pushbullet](https://www.pushbullet.com/) app is required on the phone. After downloading and installing the application on your phone, get a Pushbullet Access Token from your Account Settings.
 
 ## Installing the module
-
-To install the module, just clone this repository to your __modules__ folder: `git clone https://github.com/ronny3050/phone-notification-mirror.git phone_notification`. 
+This module has no dependencies !! :D
+To install the module, just clone this repository to your __modules__ folder: `git clone https://github.com/prasanthsasikumar/MMM-PushBullet.git`.
 Then run `cd phone_notification` and `npm install` which will install the dependencies.
 
 ## Using the module
@@ -17,18 +18,24 @@ To use this module, add it to the modules array in the `config/config.js` file:
 ````javascript
 modules: [
 	{
-		    module: 'phone_notification',
-            position: 'bottom_right',
+		    module: 'MMM-PushBullet',
+            position: 'bottom_left',
             header: 'Phone Notifications',
             config:{
-                accessToken: 'YOUR_ACCESS_TOKEN',
-                numberOfNotifications: 5,
-                displayNotificationIcon: true,
-                displayMessage: true,
-                displayCount: false,
-                alert: false,
-                fade: true,
-                maxCharacters: 50
+							accessToken: '',
+							numberOfNotifications: 5,
+							displayNotificationIcon: true,
+							displayMessage: true,
+							displayCount: false,
+							alertOnNotification: true,
+							fade: true,
+							maxCharacters: 50,
+							msgType: 'sms_changed',
+							mirrorType: 'mirror',
+							filterJunk: true,
+							msgLimit: 4,
+							genLimit: 4,
+							hideIfNoNotification: false
             },
 	}
 ]
