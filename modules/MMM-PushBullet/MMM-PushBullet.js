@@ -60,7 +60,7 @@ Module.register("MMM-PushBullet", {
         } else if (this.isApp(push)) {
           this.genQueue.push(push);
           if (this.config.alertOnNotification) {
-            this.showNotification(push.title, this.extractBody(push.body));
+            this.showNotification(push.title, push.body);
           }
           this.updateDom();
         } else if (this.busy && push.type === 'dismissal') {
@@ -131,6 +131,8 @@ Module.register("MMM-PushBullet", {
         if (this.config.displayNotificationIcon) {
           var icon = document.createElement("img");
           icon.src = "data:image/png;base64," + queue[i].icon;
+          icon.height = "25";
+          icon.width = "25";
           data.appendChild(icon);
         }
         data.appendChild(textnode);

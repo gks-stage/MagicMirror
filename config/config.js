@@ -93,7 +93,7 @@ var config = {
 		},*/
 		{
 			module: 'MMM-PushBullet',
-			position: 'bottom_left',
+			position: 'top_left',
 			header: 'Phone Notifications',
 			config: {
 				accessToken: 'o.S9y8SnjxGNgCCgLQNT5uz9IQnfDOvvZS',
