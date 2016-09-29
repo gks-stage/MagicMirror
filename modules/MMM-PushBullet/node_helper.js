@@ -161,9 +161,9 @@ module.exports = NodeHelper.create({
     var self = this;
     msg.push.notifications[0].body++;
     self.sendSocketNotification('DATA_RECEIVED', msg);
-    self.sendSocketNotification('DATA_RECEIVED', another);
+    self.sendSocketNotification('DATA_RECEIVED', youtube);
     setTimeout(function() {
-      self.dummy();
+      self.testApp();
     }, 2000);
   },
 

@@ -32,6 +32,7 @@ Module.register("MMM-PushBullet", {
     this.msgQueue = [];
     this.genQueue = [];
     this.lastNotificationTimeStamp = null;
+    this.lastNotificationBody = null;
     this.busy = false;
     this.busyStart = 0;
     this.count = 0;
@@ -43,6 +44,7 @@ Module.register("MMM-PushBullet", {
     var push = payload.push;
     if (notification === 'DATA_RECEIVED') {
       if (payload) {
+        //console.log(JSON.stringify(payload));
         if (this.isMsg(push)) {
           this.msgQueue.push(push);
           var notifications = push.notifications[0];
@@ -62,6 +64,7 @@ Module.register("MMM-PushBullet", {
           if (this.config.alertOnNotification) {
             this.showNotification(push.title, push.body);
           }
+          this.lastNotificationBody = push.body;
           this.updateDom();
         } else if (this.busy && push.type === 'dismissal') {
           this.sendNotification("HIDE_ALERT");
@@ -75,9 +78,8 @@ Module.register("MMM-PushBullet", {
     var self = this;
     var wrapper = document.createElement("table");
     wrapper.className = "small bright";
-
-    if (this.isNotificationPresent()) {
-      //console.log("Notificaitions present!")
+    if (self.isNotificationPresent()) {
+      //console.log("Notificaitions present!");
       if (self.msgQueue && self.msgQueue.length > 0) {
         var notification = self.getRequiredEntries(self.msgQueue, self.config
           .msgLimit);
@@ -119,13 +121,13 @@ Module.register("MMM-PushBullet", {
       var row = document.createElement("tr");
       var data = document.createElement("td");
       var textnode = null;
-      if (this.isMsg(queue[i])) {
+      if (queue[i].type === this.config.msgType) {
         var notifications = queue[i].notifications[0];
         content = notifications.title + ": " + notifications.body;
         textnode = document.createTextNode(content);
         data.appendChild(textnode);
       }
-      if (this.isApp(queue[i])) {
+      if (queue[i].type === this.config.mirrorType) {
         content = queue[i].title + ": " + this.extractBody(queue[i].body);
         textnode = document.createTextNode(content);
         if (this.config.displayNotificationIcon) {
@@ -174,7 +176,8 @@ Module.register("MMM-PushBullet", {
   },
 
   isApp: function(push) {
-    if (push.type === this.config.mirrorType) {
+    if (push.type === this.config.mirrorType && (this.lastNotificationBody !==
+        push.body)) {
       return true;
     }
     return false;
