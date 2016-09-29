@@ -226,12 +226,12 @@ Module.register("MMM-PushBullet", {
       }
     }
     this.count++;
-  }
+  },
 
   /*
   This is a safety function. Just in case the connection to phone drops before the "dismissal" command is send,
   In that case, this function clears the alert after a set time period- say 30 seconds      */
-    autoClearAlert: function() {
+  autoClearAlert: function() {
     var self = this;
     setTimeout(function() {
       var now = Date.now();
