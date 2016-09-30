@@ -4,9 +4,8 @@
 
 var WebSocket = require('ws');
 var NodeHelper = require('node_helper');
-//TODO check if any issue for not closing
-//TODO allignment and cssanimations
-//TODO prevent multile entries that are same
+//TODO check if any issue while running for longer times
+
 var msg = {
   "type": "push",
   "push": {

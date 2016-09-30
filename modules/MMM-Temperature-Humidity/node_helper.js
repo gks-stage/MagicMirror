@@ -19,6 +19,7 @@ module.exports = NodeHelper.create({
 	},
 
 	readSensor: function() {
+		console.log("Reading sensor");
 		var self = this;
 		var readout = dht.read();
 		self.sendSocketNotification("DATA", readout);
