@@ -105,7 +105,30 @@ var config = {
 				fade: true,
 				maxCharacters: 50
 			},
+		}, {
+			module: 'MMM-AlarmClock',
+			position: 'top_right',
+			config: {
+				alarms: [{
+					time: "02:53",
+					days: [2, 4, 6],
+					title: "Wake up",
+					message: "Get ready for the next phase!"
+				}, ],
+			}
 		},
+		/* {
+					module: 'voicecontrol',
+					position: 'bottom_left',
+					config: {
+						models: [{
+							keyword: "play", // keyword
+							description: "Say 'Play' to start playing",
+							file: "play.pmdl", // trained model file name
+							message: "PLAY" // notification message that's broadcast in the MagicMirror app
+						}]
+					}
+				},*/
 		/*{
 			module: 'MMM-STT',
 			position: 'bottom_left',
