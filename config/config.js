@@ -56,7 +56,7 @@ var config = {
 		}, {
 			module: 'MMM-Wunderlist',
 			position: 'top_right', // This can be any of the regions. Best results in left or right regions.
-			header: 'Wunderlist', // This is optional
+			header: 'ToDo List', // This is optional
 			config: {
 				clientID: '42fe22885424a114719f',
 				accessToken: 'fc16dcf7d995f16e8ba6c990ba200df03d92e6a8f9fd38ab95a7672de6e8',
@@ -105,6 +105,12 @@ var config = {
 				fade: true,
 				maxCharacters: 50
 			},
+		}, {
+			module: 'MMM-TankMonitor',
+			position: 'top_left',
+			config: {
+				refreshInterval: 1000
+			}
 		}, {
 			module: 'MMM-AlarmClock',
 			position: 'top_right',

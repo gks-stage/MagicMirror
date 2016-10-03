@@ -9,12 +9,15 @@
  * http://www.codrops.com
  */
 // jscs:disable
-;(function(window) {
+;
+(function(window) {
 
 	"use strict";
 
 	var docElem = window.document.documentElement,
-		support = {animations: Modernizr.cssanimations},
+		support = {
+			animations: Modernizr.cssanimations
+		},
 		animEndEventNames = {
 			"WebkitAnimation": "webkitAnimationEnd",
 			"OAnimation": "oAnimationEnd",
@@ -22,7 +25,7 @@
 			"animation": "animationend"
 		},
 		// animation end event name
-		animEndEventName = animEndEventNames[ Modernizr.prefixed("animation") ];
+		animEndEventName = animEndEventNames[Modernizr.prefixed("animation")];
 
 	/**
 	 * extend obj function
@@ -70,8 +73,12 @@
 		ttl: 6000,
 		al_no: "ns-box",
 		// callbacks
-		onClose: function() { return false; },
-		onOpen: function() { return false; }
+		onClose: function() {
+			return false;
+		},
+		onOpen: function() {
+			return false;
+		}
 	};
 
 	/**
@@ -81,7 +88,8 @@
 	NotificationFx.prototype._init = function() {
 		// create HTML structure
 		this.ntf = document.createElement("div");
-		this.ntf.className = this.options.al_no +  " ns-" + this.options.layout + " ns-effect-" + this.options.effect + " ns-type-" + this.options.type;
+		this.ntf.className = this.options.al_no + " ns-" + this.options.layout +
+			" ns-effect-" + this.options.effect + " ns-type-" + this.options.type;
 		var strinner = "<div class=\"ns-box-inner\">";
 		strinner += this.options.message;
 		strinner += "</div>";
@@ -94,10 +102,10 @@
 		var self = this;
 		if (this.options.ttl) {
 			this.dismissttl = setTimeout(function() {
-			if (self.active) {
-				self.dismiss();
-			}
-		}, this.options.ttl);
+				if (self.active) {
+					self.dismiss();
+				}
+			}, this.options.ttl);
 		}
 
 		// init events
@@ -110,7 +118,9 @@
 	NotificationFx.prototype._initEvents = function() {
 		var self = this;
 		// dismiss notification by tapping on it if someone has a touchscreen
-		this.ntf.querySelector(".ns-box-inner").addEventListener("click", function() { self.dismiss(); });
+		this.ntf.querySelector(".ns-box-inner").addEventListener("click", function() {
+			self.dismiss();
+		});
 	};
 
 	/**

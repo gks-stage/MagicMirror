@@ -19,7 +19,7 @@ Temperature and Humidity monitoring Module for MagicMirror<sup>2</sup>
         }
     }
     ```
- 3. Run command `npm install` in `~/MagicMirror/modules/MMM-STT` directory.
+ 3. Run command `npm install` in `~/MagicMirror/modules/MMM-Temperature-Humidity` directory.
  4. Run command `sudo apt-get install rpi-dht-sensor`.
 
 ## Config Options
