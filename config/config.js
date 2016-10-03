@@ -105,13 +105,15 @@ var config = {
 				fade: true,
 				maxCharacters: 50
 			},
-		}, {
-			module: 'MMM-TankMonitor',
-			position: 'top_left',
-			config: {
-				refreshInterval: 1000
-			}
-		}, {
+		},
+		/* {
+					module: 'MMM-TankMonitor',
+					position: 'top_left',
+					config: {
+						refreshInterval: 1000
+					}
+	},*/
+		{
 			module: 'MMM-AlarmClock',
 			position: 'top_right',
 			config: {
@@ -146,25 +148,25 @@ var config = {
 			}
 		},*/
 		/*{
-	        module: 'MMM-PIR-Sensor',
-	        config: {
-	            // See 'Configuration options' for more information.
-	        }
-	    },/*
-			/*{
-		     module: 'MMM-voice',
-		     position: 'bottom_bar',
-		     config: {
-		         microphone: 2,
-		         keyword:'mirror',
-		     }
-		 },*/
+		        module: 'MMM-PIR-Sensor',
+		        config: {
+		            // See 'Configuration options' for more information.
+		        }
+		    },/*
+				/*{
+			     module: 'MMM-voice',
+			     position: 'bottom_bar',
+			     config: {
+			         microphone: 2,
+			         keyword:'mirror',
+			     }
+			 },*/
 
 		/*{
-	          module: 'MMM-GameServers',
-	          position: 'top_left',  // This can be any of the regions. Best results in left or right regions.
-	          header: 'Game Servers' // This is optional
-	    },*/
+		          module: 'MMM-GameServers',
+		          position: 'top_left',  // This can be any of the regions. Best results in left or right regions.
+		          header: 'Game Servers' // This is optional
+		    },*/
 		/*{
          module: 'MMM-ModuleScheduler'
      },
